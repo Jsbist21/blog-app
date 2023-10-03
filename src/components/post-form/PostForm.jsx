@@ -21,7 +21,7 @@ function PostForm({ post }) {
     });
 
   const navigate = useNavigate();
-  const userData = useSelector((state) => state.user.userData);
+  const userData = useSelector((state) => state.auth.userData);
 
   const submit = async (data) => {
     if (post) {
@@ -81,7 +81,7 @@ function PostForm({ post }) {
   }, [watch, slugTransform, setValue]);
 
   return (
-    <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
+    <form onSubmit={submit} className="flex flex-wrap">
       <div className="w-2/3 px-2">
         <Input
           label="Title :"
